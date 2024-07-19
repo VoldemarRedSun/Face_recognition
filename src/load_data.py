@@ -39,7 +39,6 @@ def load_images(path: str, list_actors: list, limit_load: int = 15) -> None:
                  force_replace=False,
                  timeout=60,
                  verbose=False)
-        # переименование директории
         os.rename(path + '/' + str_face, path + '/' + face)
     logging.info('Completing the loading of actor images')
 
@@ -52,10 +51,7 @@ def resize_images(image: Image, size_new: int) -> np.array:
     :param size_new: размер изображения по одной из сторон
     :return: изображение
     """
-    # получим размер изображения
     size = image.size
-    # получим коэффициент, на который нужно уменьшить/увеличить
-    # изображение по одной из сторон
     coef = size_new / size[0]
     # изменяем размер изображения
     resized_image = image.resize(
@@ -77,7 +73,6 @@ def format_images(path: str, list_actors: list, size_new: int) -> None:
     for face in list_actors:
         # выгрузим все название файлов из папки
         files = glob.glob(f'{path}/{face}/*')
-        # пройдемся по списку файлов в цикле
         for file in files:
             try:
                 file_img = Image.open(file)
