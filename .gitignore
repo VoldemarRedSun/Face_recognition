@@ -1,0 +1,10 @@
+/.DS_Store
+/.idea
+/img_test
+/.ipynb_checkpoints
+/env/
+/venv/
+/model/model.pkl
+/src/__pycache__
+test_image.jpg
+data/.DS_Store
